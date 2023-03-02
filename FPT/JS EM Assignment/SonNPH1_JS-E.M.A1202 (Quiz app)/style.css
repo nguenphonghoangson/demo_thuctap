@@ -1,0 +1,24 @@
+p{ 
+    text-align: center;}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+.main{
+    padding: 20px;
+    display: inline-block;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+.event{
+    display: flex;
+    justify-content: space-between;
+    align-content: end;
+}
+button{
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:auto;
+            text-align: center;
+            border:1px solid black;
+            padding:20px;
+        }
+        #body{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2 width="">Random immge generator</h2>
+    <div id="body"></div>
+    <button class="btn" onclick="generateImg(theImage)">Generate</button>
+    <script>
+        var theImage = [
+        {
+            src:"./anh1.jpg",
+        },
+        {
+            src:"./anh2.jpg",
+
+        },
+        {
+            src:"./anh3.jpg",
+        },
+        {
+            src:"./anh4.jpg",
+        },
+        {
+            src:"./anh5.jpg",
+        },
+        {
+            src:"./anh6.jpg",
+        }
+        
+        ];
+        let body = document.getElementById('body');
+        
+        
+        function generateImg(arr){
+            body.innerHTML = ``;
+            for(let i=0;i<arr.length;i++){
+                for(let a=0;a<3;a++){
+                    let a = Math.floor(Math.random() *arr.length) ;
+                    body.innerHTML += `<img src="${arr[a].src}" style="width:30%;height:auto;">`;
+                }
+               break;
+            }
+        }
+        generateImg(theImage);
+        
+        
+    </script>
+</body>
+</html>

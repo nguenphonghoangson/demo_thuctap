@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            --bs-primary-rgb: 29, 128, 159;
+            --bs-secondary-rgb: 236, 184, 7;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        a {
+            color: #1D809F;
+            text-decoration: underline;
+        }
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ol, ul {
+            padding-left: 2rem;
+        }
+        .menu-toggle {
+            position: fixed;
+            right: 15px;
+            top: 15px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            color: #fff;
+            background: rgba(52, 58, 64, 0.5);
+            line-height: 50px;
+            z-index: 999;
+        }
+        .rounded {
+            border-radius: 0.25rem !important;
+        }
+        #sidebar-wrapper {
+            position: fixed;
+            z-index: 2;
+            right: 0px;
+            width: 250px;
+            height: 100%;
+            transition: all 0.4s ease 0s;
+            transform: translateX(250px);
+            background: #1D809F;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sidebar-nav {
+            position: absolute;
+            top: 0;
+            width: 250px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .sidebar-nav > .sidebar-brand {
+            font-size: 1.2rem;
+            background: rgba(52, 58, 64, 0.1);
+            height: 80px;
+            line-height: 50px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+        }
+        .sidebar-nav > .sidebar-brand a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .sidebar-nav li.sidebar-nav-item a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+        }
+        #sidebar-wrapper .active {
+            right: 250px;
+            width: 250px;
+            transition: all 0.4s ease 0s;
+        }
+        .masthead{
+            min-height: 30rem;
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 8px 0px;
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(/resources/images/bg-masthead.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .masthead h1, .masthead .h1 {
+            font-size: 4rem;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            font-size: 4rem;
+        }
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        .content-section{
+            padding: 7.5rem 0px;
+        }
+        .content-section-heading h3, .content-section-heading .h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .bg-primary{
+            --bs-bg-opacity: 1;
+            background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+        }
+        .text-secondary {
+            --bs-text-opacity: 1;
+            color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+        }
+        .callout {
+            padding: 15rem 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(./resources/images/bg-masthead.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .callout h1, .callout .h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            display: block;
+            max-width: 30rem;
+        }
+        .portfolio-item .caption .caption-content {
+            color: #fff;
+            margin: auto 2rem 2rem;
+        }
+        .portfolio-item {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            max-width: 530px;
+            margin: auto auto 1rem;
+        }
+        .portfolio-item .caption {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(33, 37, 41, 0.2);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        .map{
+            opacity: 0.7;
+        }
+        .service-icon {
+            background-color: #fff;
+            color: #1D809F;
+            height: 7rem;
+            width: 7rem;
+            display: block;
+            line-height: 7.5rem;
+            font-size: 2.5rem;
+            box-shadow: 0 3px 3px 0 rgb(0 0 0 / 10%);
+        }
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+    </style>
+ 
+</head>
+<body>
+    <a class="menu-toggle rounded"><i class="fas fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="#page-top">Start Bootstrap</a></li>
+            <li class="sidebar-nav-item"><a href="#page-top">Home</a></li>
+            <li class="sidebar-nav-item"><a href="#about">About</a></li>
+            <li class="sidebar-nav-item"><a href="#services">Services</a></li>
+            <li class="sidebar-nav-item"><a href="#portfolio">Portfolio</a></li>
+            <li class="sidebar-nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mb-1">Stylish Portfolio</h1>
+            <h3 class="mb-5"><em>A Free Bootstrap Theme by Start Bootstrap</em></h3>
+            <button class="btn btn-primary btn-lg" href="#about">Find Out More</button>
+        </div>
+    </header>
+    <section class="content-section bg-light" id="about">
+        <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-10">
+                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+                    <p class="lead mb-5">
+                        This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
+                        <a href="">Unsplash</a>
+                        !
+                    </p>
+                    <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section bg-primary text-white text-center" id="services">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-mobile-screen"></i></span>
+                    <h4><strong>Responsive</strong></h4>
+                    <p class="text-faded mb-0">Looks great on any screen size!</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-5 mb-lg-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-pencil " ></i></span>
+                    <h4><strong>Redesigned</strong></h4>
+                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-5 mb-md-0">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-thumbs-up"></i></span>
+                    <h4><strong>Favorited</strong></h4>
+                    <p class="text-faded mb-0">
+                        Millions of users
+                        Start Bootstrap!
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="fa-solid fa-paperclip"></i></span>
+                    <h4><strong>Question</strong></h4>
+                    <p class="text-faded mb-0">I mustache you a question...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="callout">
+        <div class="container px-4 px-lg-5 text-center">
+            <h1 class="mx-auto mb-5">
+                Welcome to
+                <em>your</em>
+                next website!
+            </h1>
+            <button class="btn btn-primary btn-lg">Download Now!</button>
+        </div>
+    </section>
+    <section class="content-section" id="portfolio">
+        <div class="container px-4 px-lg-5">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Portfolio</h3>
+                <h1 class="mb-5">Recent Projects</h1>
+            </div>
+            <div class="row gx-0">
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Stationary</div>
+                                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="./resources/images/portfolio-1.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Ice Cream</div>
+                                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="./resources/images/portfolio-2.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Strawberries</div>
+                                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="./resources/images/portfolio-3.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="h2">Workspace</div>
+                                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="./resources/images/portfolio-4.jpg" alt="...">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-section bg-primary text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+                <button class="btn btn-lg btn-light me-4" href="#!">Click Me!</button>
+                <button class="btn btn-lg btn-dark" href="#!">Look at Me!</button>
+            </div>
+            
+    </section>
+    <div class="map mb-3"><img src="./resources/images/map.PNG" class="col-12 "></div>
+    <footer class="footer text-center my-5">
+        <div class="container px-4 px-lg-5">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="fa-brands fa-facebook fs-1" style="color:#136882;"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="fa-brands fa-twitter fs-1" style="color:#136882;"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="social-link rounded-circle text-white" href="#!"><i class="fa-brands fa-github fs-1" style="color:#136882;"></i></a>
+                </li>
+            </ul>
+            <p class="text-muted small mb-0">Copyright © Your Website 2022</p>
+        </div>
+    </footer>
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(".menu-toggle").on("click", function(){
+            if($("#sidebar-wrapper").hasClass("active")){
+                $("#sidebar-wrapper").removeClass("active");
+            }else{
+                 $("#sidebar-wrapper").addClass("active");
+
+            }
+        
+        });
+    </script>
+</body>
+</html>

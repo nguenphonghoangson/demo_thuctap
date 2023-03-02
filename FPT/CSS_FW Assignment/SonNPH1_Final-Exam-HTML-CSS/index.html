@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            line-height: 1.5;
+        }
+        h1{
+            font-size: 24px;
+            text-transform: uppercase;   
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+            float: left;
+        }
+        li a{
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            text-transform: uppercase; 
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 1.2rem;
+        }
+        .bg-green{
+            background-color: #1abc9c;
+        }
+        
+        .bg-light{
+            background-color: #fff;
+        }
+        header{
+            padding:3rem 2rem;
+        }
+        .tag{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .tag h1{
+            padding: 0.8rem 0;
+            font-size: 3rem;
+        }
+        .tag p{
+            font-size: 1.25rem;
+            padding: 1px 0;
+
+        }
+        .icon{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0px;
+        }
+       
+        .icon .icon-line{
+            width: 100%;
+            max-width: 7rem;
+            height: 0.25rem;
+            border-radius: 1rem;
+            background-color: white;
+            margin: 1rem;
+        }
+        .line-dark{
+            background-color: #2c3e50 !important;
+        }
+        .icon .icon-icon{
+            font-size: 2rem;
+        }
+        .protfolio{
+            margin: 3rem 0;
+        }
+        .protfolio .tag{
+            color: #2c3e50;
+        }
+        .protfolio-content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;    
+        }
+        .protfolio-content div{
+          width: 30%;
+            
+        }
+        .protfolio-content div img{
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+
+        }
+        .about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:3rem 2rem;
+        }
+        .about .about-content{
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            padding: 0px 100px;
+            gap: 40px;
+        }
+        .about .about-content div{
+            width: 25%;
+        }
+        .about .about-content p{
+            font-size: 1.25rem;
+            margin-left: auto;
+        }
+        .contact {
+            padding:3rem 2rem;
+        }
+        .contact .tag{
+            color: #2c3e50;
+        }
+        .contact .contact-content{
+            width: 75%;
+           margin: auto;
+        }
+        .contact .contact-content form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 7rem;
+        }
+        label{ 
+            display: block;
+            color: gray;
+            font-size: 1.25rem;
+        }
+        input, textarea{
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid lightgray;
+            height: 24px;
+            outline: none;
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+
+        }
+        textarea{
+            height: 100px;
+        }
+        footer{
+            background-color:#1a252f ;
+
+        }
+        footer>div{
+            padding: 2rem 2rem;
+            display: flex;
+            color: #fff;
+            background-color:#2c3e50;
+            
+            text-align: center;
+        }
+        footer div div{
+        flex-grow: 1;
+        flex-basis: 0;
+        }
+        span{
+            margin: 1rem 0.5rem;
+        }
+        footer p{
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+        input[type="submit"]{
+        background-color: #1abc9c;
+        color: #fff;
+        height: 32px;
+        width: 100px;
+        padding: 5px 0px;
+        border-radius: 2px;
+       }
+       button{
+        padding: 1rem 2rem;
+        outline: none;
+        background: #1abc9c;
+        color: #fff;
+        border: 2px solid white;
+        border-radius: 2px;
+       }
+        @media only screen and (max-width: 912px) {
+        .about .about-content{
+           padding: 0;
+        }
+        .about .about-content div{
+            width: 100%;
+        }
+        .protfolio-content div{
+          width: 40%;
+            
+        }
+        footer>div{
+           flex-direction: column;
+        }
+        footer p{
+            color: #fff;
+            text-align: center;
+            padding:2px;
+        }
+
+        }
+       
+        @media only screen and (max-width: 768px) {
+            nav h1 {
+                font-size: 24px;
+                flex-grow: 4;
+                flex-basis: 0;
+            }
+            nav ul{
+                flex-grow: 1;
+                flex-basis: 0;
+                flex-direction: column;
+                display: none;
+            }
+        .protfolio-content{
+            flex-direction: column;
+            flex-wrap: nowrap;  
+        }
+        .protfolio-content div{
+          width: 75%;
+            
+        }
+        .contact .contact-content form{
+            padding: 0px;
+        }
+        .about .about-content{
+           flex-direction: column;
+           padding: 2px;
+        }
+        .about .about-content div{
+            width: 100%;
+        }
+        footer>div{
+           flex-direction: column;
+        }
+        footer p{
+            color: #fff;
+            text-align: center;
+            padding:2px;
+        }
+            }
+     
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>start bootstrap</h1>
+        <ul>
+         <li><a>protfoud</a></li>
+         <li><a>about</a></li>
+         <li><a>contact</a></li>
+        </ul>
+     </nav>
+    <header class="bg-green">
+        <div class="tag">
+            <img src="/resources/avataaars.png" alt="">
+            <h1>start bootstrap</h1>
+            <div class="icon ">
+                <div class="icon-line"></div>
+                <div class="icon-icon"><i class="fas fa-star"></i></div>
+                <div class="icon-line"></div>
+            </div>
+            <p><strong>Graphic Artist-Web Designer - IIlustator</strong> </p>
+        </div>
+    </header>
+    <section class="protfolio">   
+        <div class="tag">
+            <h1>protfolio</h1>
+            <div class="icon">
+                <div class="icon-line line-dark"></div>
+                <div class="icon-icon"><i class="fas fa-star"></i></div>
+                <div class="icon-line line-dark"></div>
+            </div>
+        </div>
+        <div class="protfolio-content">
+            <div> 
+                <img src="/resources/cake.png" alt="">
+            </div>
+            <div>
+                <img src="/resources/circus.png" alt="">
+            </div>
+            <div>
+                <img src="/resources/game.png" alt="">
+            </div>
+            <div>
+                <img src="/resources/safe.png" alt="">
+            </div>
+            <div>
+                <img src="/resources/submarine.png" alt="">
+            </div>
+            <div>
+                <img src="/resources/cabin.png" alt="">
+            </div>
+
+        </div>
+    </section>
+    <section class="about bg-green">
+        <div class="tag">
+            <h1>About</h1>
+            <div class="icon">
+                <div class="icon-line "></div>
+                <div class="icon-icon"><i class="fas fa-star"></i></div>
+                <div class="icon-line"></div>
+            </div>
+        </div>
+        <div class="about-content">
+            <div>
+                <p>
+                    Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.
+                </p>
+            </div>
+            <div>
+                <p>
+                    You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!
+                </p>
+            </div>
+            
+        </div>
+        <button> <i class="fa-solid fa-download"></i> Free download</button>
+    </section>
+    <section class="contact">
+        <div class="tag">
+            <h1>Contact Me</h1>
+            <div class="icon">
+                <div class="icon-line line-dark"></div>
+                <div class="icon-icon"><i class="fas fa-star"></i></div>
+                <div class="icon-line line-dark"></div>
+            </div>
+        </div>
+        <div class="contact-content">
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text">
+                <label for="name">Email Address</label>
+                <input type="text">
+                <label for="name">Phone Number</label>
+                <input type="text">
+                <label for="name">Message</label>
+                 <textarea name="" id="" cols="50" rows="50"></textarea>
+                 <input type="submit" value="Send">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <div>
+                <h1>location</h1>
+                <p>2215 John Daniel Drive</p>
+                <p>Clark,MO 65243</p>
+            </div>
+            <div>
+                <h1>Around the web</h1><br>
+                <span><i class="fa-brands fa-square-facebook"></i></span>
+                <span><i class="fa-brands fa-tiktok"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-discord"></i></span>
+            </div>
+            <div>
+                <h1> About Freelancer</h1>
+                <p>Freelance is a free to use, MIT licensed Bootstrap theme created by Sơn</p>
+            </div>
+        </div>
+        <p> Copyright@ You! Website 2020</p>
+       
+    </footer>
+</body>
+</html>

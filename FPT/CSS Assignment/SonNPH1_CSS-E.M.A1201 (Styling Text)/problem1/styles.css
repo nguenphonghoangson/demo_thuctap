@@ -1,0 +1,113 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+@font-face {
+  font-family: myfont1;
+  src: url('fonts/Lovato-Light-webfont.ttf');
+}
+@font-face {
+  font-family: myfont2;
+  src: url('fonts/josefinslab-bold-webfont.ttf');
+}
+*{
+  font-family: myfont1;
+}
+p{
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 1px;
+}
+h1,h2{
+  font-family: myfont2;
+  letter-spacing: 0.2rem;
+}
+h1{
+  text-align: center;
+}
+h2+p{
+  text-indent:20px;
+}
+a[href*="en.wikipedia.org"]::after{
+  margin: 0px 4px;
+  display: inline-block;
+  content: " ";
+  width: 1rem;
+  height: 1rem;
+  text-decoration: none;
+  background: url(icon.png) no-repeat;
+  background-size: 1rem;
+  
+}
+a:hover{
+  color: #a66;
+  text-decoration: none;
+}
+a:visited{
+  color:#a66;
+}
+a:focus{
+  color: #a66;
+  text-decoration: none;
+}
+ul{
+  list-style-type:square;
+}
+nav ul li{
+list-style-type: none;
+padding:20px;
+border:2px solid #a66;
+margin:20px;
+font-size: 20px;
+text-align: center;
+
+}
+nav ul li a{
+  text-decoration: none;
+}

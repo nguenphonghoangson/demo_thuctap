@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: roboto;
+        }
+        @font-face {
+            font-family: roboto;
+            src: url(./resources/Roboto-Regular.ttf);
+        }
+        body{
+
+            margin: 0px 50px 50px;
+        }
+        .header{
+            display:flex ;
+            gap:20px
+        }
+        .header div{
+            width: 50%;
+        }
+        p{
+            color: gray;
+            margin: 10px 0px;
+        }
+        .content{
+            display:flex ;
+            gap:20px
+        }
+        .content div{
+            width: 50%;
+        }
+        .content div p{
+            color: gray;
+            margin: 10px 0px;
+        }
+        .content div img{
+            width: 100%;
+            height: auto;
+        }
+        h3{
+            font-size: 20px;
+            opacity: 0.1;
+            margin:10px 0px;
+        }
+        h2{
+            margin:10px 0px;
+            font-size: 24px;
+        }
+        h1{
+            margin:10px 0px;
+            font-size: 30px;
+        }
+        footer{
+            margin-top: 10px;
+            display: flex;
+            color: white;
+        }
+        footer .contact-info{
+            background-color: black;
+            flex-grow: 1;
+            padding: 0px 20px;
+
+        }
+        footer .contact-info span i{
+            margin-right: 10px;
+
+        }
+        footer .contact-us{
+            background-color: gray;
+            text-align: center;
+            flex-grow: 1;
+        }
+        footer .like-us{
+            background-color: darkgrey;
+            text-align: center;
+            flex-grow: 1;
+        }
+        span{
+            display: inline-block;
+            margin: 5px 0px;
+        }
+        i{
+            font-size: 16px;
+            
+        }
+        @media only screen and (max-width: 620px) {
+        body{
+                margin: 0px;
+                font-size: 16px;
+            }
+        .header{
+            flex-direction: column;
+        }
+        .header div{
+            width: 100%;
+        }
+        .content{
+            flex-direction: column;
+        }
+        .content div{
+            width: 100%;
+        }
+        footer{
+            flex-direction: column;
+        }
+        footer div{
+            padding: 10px;
+            text-align: center;
+        }
+        }
+    
+    </style>
+</head>
+<body>
+ <section>
+    <span><i class="fa-solid fa-bars "></i></span>
+    <div class="header">
+        <div>
+            <h3>Hello</h3>
+            <h2>We are</h2>
+            <h1>InShock</h1>
+        </div>
+        <div>
+        <p>We build design teams - we break things down and build it better - we deliver the best of solutions</p>
+        <p>Insock means powerfull simplictity</p>
+        </div>    
+    </div>
+ </section>
+ <section>
+   <p>MOST RECENT WORK:</p>
+   <div class="content">
+    <div>
+        <img src="./resources/house1.jpg" alt="">
+    </div>
+    <div>
+    <img src="./resources/house_arch.jpg" alt="">
+    <p>Demos, Logos, Reports, Names, Event, Media, Workpress, Google, Books, Optimisations</p>
+    </div>
+   </div>
+ </section>
+ <footer>
+    <div class="contact-info">
+        <h2>Contact Info</h2>
+        <span><i class="fa-solid fa-location-dot"></i> Chicago, US</span><br>
+        <span><i class="fa-solid fa-phone"></i> Phone: +00 151515</span><br>
+        <span><i class="fa-regular fa-envelope"></i> Email: mail@gmail.com</span><br>
+    </div>
+    <div class="contact-us">
+        <h2>Contact US</h2>
+        <span>If you have an idea</span><br>
+        <span>What are you waiting for?</span><br>
+    </div>
+    <div class="like-us">
+        <h2>Like US</h2>
+        <span><i class="fa-brands fa-square-facebook"></i></span><br>
+        <span><i class="fa-brands fa-tiktok"></i></span><br>
+        <span><i class="fa-brands fa-twitter"></i></span><br>
+        <span><i class="fa-brands fa-discord"></i></span><br>
+        <span><i class="fa-brands fa-linkedin-in"></i></span><br>
+    </div>
+ </footer>
+</body>
+</html>

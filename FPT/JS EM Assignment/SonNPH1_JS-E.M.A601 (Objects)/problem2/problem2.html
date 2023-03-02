@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+    </section>
+
+  </body>
+  <script>
+    let info;
+
+    // Add your code here
+
+    const singer = {
+      name : 'Son Tung MTP ',
+      nationality : 'Vietnamese',
+      genre : 'Pop star',
+      debut : 2015,
+      songs : [
+        {
+          name : 'Con Mua Ngang Qua',
+          released : 2021
+        },
+        {
+          name : 'Hay Trao Cho Anh',
+          released : 2022
+        }
+      ],
+    }
+
+    info = `The ${singer.nationality} ${singer.genre} ${singer.name} were active since ${singer.debut}
+    His first song, ${singer.songs[0].name}, was released in ${singer.songs[0].released}
+    His last song ${singer.songs[1].name} is the most successfully by far`;
+    
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = info;
+    section.appendChild(para1);
+  </script>
+
+</html>

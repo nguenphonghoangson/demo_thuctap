@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif,sans-serif;
+            box-sizing: inherit;
+
+        }
+        body{
+            line-height: 1.5;
+        }
+        h1{
+            font-size: 64px;
+        }
+        h2{
+            font-size: 32px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Segoe UI",Arial,sans-serif;
+            font-weight: 400;
+            margin: 10px 0;
+            
+        }
+        p{
+            margin: 20px 0;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            
+        }
+        header{
+
+            position: relative;
+           
+        }
+        header .tag{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 25%;
+            margin-left: 20px;
+            transform: translate(0,-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color:white;
+            text-align: center;
+            border-radius: 5px;
+            padding: 12px 24px
+        }
+        .flex-ds{
+            display: flex;
+        }
+        .button-block{
+            display: block;
+            width: 100%;
+        }
+        button{
+            background-color: rgba(76, 175, 80,0.6);
+            border: none;
+            color: white;
+            border-radius: 4px;
+            padding: 8px 0px;
+            white-space: nowrap;
+            font-size: 16px;
+            outline: none;
+        }
+        .the-app{
+            margin: 50px 0px;
+            padding: 0px 8px;
+        }
+        .the-app .left{
+            display: block;
+            flex-grow: 2;
+            flex-basis: 0;
+            padding: 0px 8px;
+            
+        }
+        .the-app .right{
+          flex-grow: 1;
+          flex-basis: 0;
+          padding: 0px 8px;
+        } 
+        .the-app .right img{
+            width: 350px;
+            height: auto;
+            float: right;
+        }
+        .the-app .left button{
+            background-color: lightgray;
+            padding: 8px 16px;
+            border-radius: 0px;
+        }
+        p>span{
+            font-size: 25px;
+        }
+        i{
+            margin: 0px 1px;
+        }
+        .clarity .content3{
+            flex-grow: 1;
+            flex-basis: 0;
+            padding: 0px 8px;
+            
+        }
+        .clarity .content3 img{
+            width: 100%;
+            height: auto;
+            float: left;
+            border-radius: 8px;
+        }
+        .clarity .content4{
+          flex-grow: 3;
+          flex-basis: 0;
+          margin-left: 64px;
+        } 
+       
+        .bg-lightgray{
+            background-color: #f1f1f1;
+            padding:  50px 10px;
+
+        }
+        
+        .features{
+            flex-direction: column;
+            padding: 20px 20px;
+            background-color: grey;
+            color: white;
+            margin: 50px 0px ;
+            text-align: center;
+            margin: 40px 0px;
+        }
+        .features div div{
+            text-align: center;
+            width: 25%;
+        }
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+        .bg-red{
+            background-color: red;
+        }
+        .bg-gray{
+            background-color: grey;
+        }
+        .pricing{
+            flex-direction: column;
+            padding: 20px 20px;
+            background-color: grey;
+            color: black;
+            margin: 50px 0px ;
+            text-align: center;
+            margin: 40px 0px;
+            background-color: white;
+            
+        }
+        .pricing ul li{
+            text-decoration: none;
+            list-style: none;
+            padding: 16px 0px;
+            border: 1px solid lightgrey;
+        }
+        .pricing ul{
+            width: 50%;
+            box-shadow: 8px 8px 8px lightgrey;
+        }
+        .pricing ul li:first-child{
+            font-size: 24px !important;
+            border: none;
+            color: white;
+        }
+        .bg-black{
+            background-color: black;
+            padding: 8px 20px;
+        }
+        footer{ 
+            text-align: center;
+        }
+        footer div{
+            margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 620px) {
+            header{
+                max-width: 620px;
+            }
+            header .tag p,h2,hr{
+                display: none;
+            }
+            header img{
+                width: 100%;
+            }
+            header .tag{
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 100%;
+            margin-left: 0px;
+            transform: translate(0,0);
+            background-color:none;
+            color:white;
+            text-align: center;
+            border-radius: 0px;
+            padding: 0px 0px
+        }
+        .the-app{
+            flex-direction: column;
+        }
+        .the-app .left{
+            flex-grow: 0;
+            flex-basis: 0;
+            padding: 0px 0px;
+            
+        }
+        .the-app .right{
+          flex-grow: 1;
+          flex-basis: 1;
+          padding: 0px 8px;
+        } 
+        .clarity{
+            flex-direction: column;
+        }
+        .pricing div{
+            flex-direction: column;
+        }
+        .pricing ul{
+            width: 100%;
+        }
+        .clarity .content4{
+          flex-grow: 3;
+          flex-basis: 0;
+          margin-left: 0px;
+        } 
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./resources/app.jpg" alt="">
+        <div class="tag">
+            <h2>Take photos with our app</h2>
+            <hr>
+            <p>Super simple installment: free of charge</p>
+            <button class="button-block">Download
+                <i class="fa-brands fa-android fa-lg"></i>
+                <i class="fa-brands fa-apple fa-lg"></i>
+                <i class="fa-brands fa-windows fa-lg"></i>
+            </button>
+        </div>
+    </header>
+    <section class="the-app flex-ds">
+        <div class="left">
+            <h1>The App</h1>
+            <h1 class="green">Why  buy it?</h1>
+            <p><span>Take photos like a pro.</span>You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <button>Download Application</button><br>
+            <p>Available for 
+                <i class="fa-brands fa-android fa-lg"></i>
+                <i class="fa-brands fa-apple fa-lg"></i>
+                <i class="fa-brands fa-windows fa-lg"></i>
+            </p>
+        </div>
+        <div class="right">
+            <img src="./resources/img_app.jpg" alt="">
+        </div>
+    </section>
+    <section class=" clarity bg-lightgray flex-ds">
+        <div class="content3">
+            <img src="./resources/app5.jpg" alt="">
+        </div>
+        <div class="content4">
+            <h1><b>Clarity</b></h1>
+            <h1 class="red">Pixels, who?</h1>
+            <p><span>A revolution in resolution.</span>Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+    </section>
+    <section class="features flex-ds">
+        <div>
+            <h1><b>Features</b></h1>
+            <p>This app is just so lorem ipsum</p>
+        </div>
+        <div class="flex-ds">
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+        </div>
+        <div class="flex-ds">
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+        </div>
+        <div class="flex-ds">
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bolt fa-2xl"></i>
+                <p>Fast</p>
+            </div>
+        </div>
+
+    </section>
+    <section class="pricing">   
+        <div >
+            <h1><b>Pricing</b></h1>
+            <p>Chose a pricing plan that fits your needs</p>
+        </div>
+        <div class="flex-ds" style="gap: 40px; ">
+            <ul>
+                <li class="bg-gray">Basic</li>
+                <li><b>250</b> Photos</li>
+                <li><b>10</b> Features</li>
+                <li><b>No</b> Ads</li>
+                <li><b>Office hours</b> Support</li>
+                <li>$25</li>
+                <li class="bg-lightgray"><button class="bg-black">Download</button></li>
+            </ul>
+            <ul>
+                <li class="bg-red">Premium</li>
+                <li><b>100</b> Photos</li>
+                <li><b>50</b> Features</li>
+                <li><b>No</b> Ads</li>
+                <li><b>Endless</b> Support</li>
+                <li>$99</li>
+                <li class="bg-lightgray"><button class="bg-black">Download</button></li>
+            </ul>
+        </div>
+    </section>
+    <footer class="bg-lightgray">
+        <div >
+        <span><i class="fa-brands fa-square-facebook"></i></span>
+        <span><i class="fa-brands fa-tiktok"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+        <span><i class="fa-brands fa-discord"></i></span>
+        <span><i class="fa-brands fa-linkedin-in"></i></span>
+        </div>
+        <span>Power by sơn đẹp trai</span>
+    </footer>
+</body>
+</html>

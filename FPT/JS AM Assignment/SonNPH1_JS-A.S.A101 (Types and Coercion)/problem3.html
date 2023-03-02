@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem4</title>
+</head>
+
+<body>
+    <div class="demo"></div>
+    <script>
+
+        function reverse(str) {
+            str += '';
+            str = str.split('_');
+            for (var i = 0; i < str.length; i++) {
+                str[i] = str[i].slice(0, 1).toUpperCase() + str[i].slice(1, str[i].length);
+            }
+            return str.join('');
+        }
+
+        const demo = document.getElementsByClassName('demo')[0];
+        demo.innerHTML = 'Result of function reverse("user_name") === "UserName" is : ' + (reverse('user_name')==='UserName');
+        console.log(reverse('user_name')==='UserName');//true
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register App</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* form h1*/
+        form {
+            width: 640px;
+            margin: auto;
+            border: 2px solid rgb(104, 95, 95, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Add padding to containers */
+        .container {
+            padding: 16px;
+            background-color: white;
+        }
+
+        /* Full-width input fields */
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #000;
+            background: #fff;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Overwrite default styles of hr */
+        hr {
+            border: 1px solid #ffffff;
+            margin-bottom: 25px;
+        }
+
+        /* Set a style for the submit button */
+        .registerbtn {
+            background-color: #04FA6D;
+            color: white;
+            padding: 10px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            border-radius: 5px;
+
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+
+        .notify {
+            width: 100%;
+            height: 25px;
+            margin-bottom: 10px;
+            color: red;
+        }
+
+        .notify-success {
+            width: 80%;
+            margin: auto;
+            /* background-color: #04AA6D; */
+            color: #0fda27;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="container">
+            <h1>Registration Form</h1>
+            <div class="notify notify-success"></div>
+            <hr>
+
+            <label for="Username"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" name="username" id="username">
+            <div class="notify notify-username"></div>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw">
+            <div class="notify notify-psw"></div>
+
+            <label for="psw-confirm"><b>Confirm Your Password</b></label>
+            <input type="password" placeholder="Confirm Your Password" name="psw-confirm" id="psw-confirm">
+            <div class="notify notify-confirm-psw"></div>
+
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+
+
+    </form>
+
+</body>
+<script>
+    var notifyUsername = document.querySelector('.notify-username');
+    var notifyPsw = document.querySelector('.notify-psw');
+    var notifyConfirmPsw = document.querySelector('.notify-confirm-psw');
+    var notifySuccess = document.querySelector('.notify-success');
+
+    const btnRegister = document.querySelector('.registerbtn');
+
+    btnRegister.addEventListener('click', function (e) {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('psw').value;
+        var confirmPsw = document.getElementById('psw-confirm').value;
+        if (username === '' && password === '' && confirmPsw === '') {
+            notifyUsername.textContent = 'Username is required';
+            notifyPsw.textContent = 'Password is required';
+            notifyConfirmPsw.textContent = 'Confirm password is required';
+        } else {
+            if (username.trim() ==='') {
+                notifyUsername.textContent = 'Username is required';
+            } else {
+                notifyUsername.textContent = '';
+                if (password === '') {
+                    notifyPsw.textContent = 'Password is required';
+                } else {
+                    notifyPsw.textContent = '';
+                    if (confirmPsw === '') {
+                        notifyConfirmPsw.textContent = 'Confirm password is required';
+                    } else {
+                        notifyConfirmPsw.textContent = '';
+                        if (password === confirmPsw) {
+                            notifySuccess.textContent = 'You have registered successfully';
+                        } else {
+                            notifyConfirmPsw.textContent = 'Password and confirm password is not match';
+                            notifySuccess.textContent = '';
+                        }
+                    }
+                }
+            }
+        }
+        e.preventDefault();
+    })
+
+</script>
+
+</html>
